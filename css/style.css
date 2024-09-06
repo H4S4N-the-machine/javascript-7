@@ -1,0 +1,204 @@
+:root {
+  --navColor: white;
+  --bodyColor: white;
+  --textColor: #242424;
+}
+
+.darkMode {
+  --navColor: #6fc4e3;
+  --bodyColor: rgb(8, 6, 23);
+  --textColor: white;
+}
+
+/* ⭐⭐common css starts⭐⭐ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p,
+span,
+ol {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.3s;
+  background-color: var(--bodyColor);
+}
+
+/*  ⭐⭐common css starts⭐⭐ */
+
+nav {
+  padding: 15px 0;
+  background-color: var(--navColor);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+nav a {
+  color: var(--textColor);
+  margin: 0 15px;
+}
+
+nav .darkBtn {
+  border: none;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+
+nav .darkBtn span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 40px;
+  font-size: 20px;
+}
+
+nav .moonIcon {
+  background-color: rgb(16, 11, 37);
+  color: white;
+}
+nav .sunIcon {
+  background-color: rgb(220, 191, 47);
+
+  transition: 0.35s ease-in;
+}
+
+.darkMode nav .sunIcon {
+  margin-top: -100%;
+}
+
+/* ⭐faq starts⭐ */
+
+section {
+  height: 100vh;
+}
+
+.faq {
+  border: 1px solid burlywood;
+  margin-bottom: 20px;
+}
+
+.faqHeader {
+  border-bottom: 1px solid rgb(15, 90, 180);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.faqHeader h5 {
+  font-weight: 600;
+}
+
+.faqCnt {
+  padding: 15px;
+}
+
+.faqBody {
+  max-height: 0px;
+  overflow: hidden;
+  transition: 0.5s ease-in;
+}
+
+.faq.active .faqBody{
+    max-height: 100vh;
+    overflow: auto;
+
+}
+
+.faq.active .faqHeader span{
+    transform: rotate(-180deg);
+}
+
+.faq .faqHeader span{
+    transition: 0.3s ease;
+}
+/* ⭐faq ends⭐ */
+
+.popup{
+  width: 100%;
+  max-width: 300px;
+  max-height: 600px;
+  margin: 170px 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.popup:hover{
+  filter: brightness(70%);
+}
+
+.popupImg{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.35s ease-in;
+}
+
+.popupImg.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.ppImg{
+width: 300px;
+height: 400px;  
+}
+.cancelBtn{
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  color: white;
+  background-color: red;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+.popupImg .leftArrow,
+.popupImg .rightArrow{
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ background-color: white;
+ color: black;
+ text-align: center;
+ line-height: 40px;
+ font-size: 20px;
+ position: absolute;
+ cursor: pointer;
+}
+
+.popupImg .leftArrow{
+  left: 80px;
+}
+.popupImg .rightArrow{
+  right: 80px;
+}
